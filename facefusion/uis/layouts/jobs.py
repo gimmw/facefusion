@@ -27,12 +27,5 @@ def listen() -> None:
 	job_list.listen()
 
 
-def run(ui : gradio.Blocks) -> None:  
-    root_path = state_manager.get_item('root_path')  
-    launch_kwargs = {  
-        'favicon_path': 'facefusion.ico',  
-        'inbrowser': state_manager.get_item('open_browser')  
-    }  
-    if root_path:  
-        launch_kwargs['app_kwargs'] = {'root_path': root_path}  
-    ui.launch(**launch_kwargs)
+def run(ui : gradio.Blocks) -> None:
+	ui.launch(favicon_path = 'facefusion.ico', inbrowser = state_manager.get_item('open_browser'))

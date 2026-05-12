@@ -127,5 +127,5 @@ def run(ui : gradio.Blocks) -> None:
         'inbrowser': state_manager.get_item('open_browser')  
     }  
     if root_path:  
-        launch_kwargs['app_kwargs'] = {'root_path': root_path}  
+        launch_kwargs['root_path'] = root_path
     ui.launch(**launch_kwargs)
