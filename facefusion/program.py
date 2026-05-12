@@ -283,6 +283,12 @@ def create_step_index_program() -> ArgumentParser:
 	program.add_argument('step_index', help = translator.get('help.step_index'), type = int)
 	return program
 
+def create_root_path_program() -> ArgumentParser:  
+  program = ArgumentParser(add_help = False)  
+  group_paths = program.add_argument_group('paths')  
+  group_paths.add_argument('--root-path', help = translator.get('help.root_path'), default = config.get_str_value('paths', 'root_path', ''))  
+  job_store.register_job_keys([ 'root_path' ])
+  return program
 
 def collect_step_program() -> ArgumentParser:
 	return ArgumentParser(parents = [ create_face_detector_program(), create_face_landmarker_program(), create_face_selector_program(), create_face_masker_program(), create_voice_extractor_program(), create_frame_extraction_program(), create_output_creation_program(), create_processors_program() ], add_help = False)
@@ -290,13 +296,6 @@ def collect_step_program() -> ArgumentParser:
 
 def collect_job_program() -> ArgumentParser:
 	return ArgumentParser(parents = [ create_execution_program(), create_download_providers_program(), create_memory_program(), create_log_level_program() ], add_help = False)
-
-def create_root_path_program() -> ArgumentParser:  
-    program = ArgumentParser(add_help = False)  
-    group_paths = program.add_argument_group('paths')  
-    group_paths.add_argument('--root-path', help = translator.get('help.root_path'), default = config.get_str_value('paths', 'root_path', ''))  
-    job_store.register_job_keys([ 'root_path' ])  
-    return program
 
 def create_program() -> ArgumentParser:
 	program = ArgumentParser(formatter_class = create_help_formatter_large, add_help = False)
