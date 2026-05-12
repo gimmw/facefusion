@@ -70,7 +70,8 @@ def route(args : Args) -> None:
 			if not ui_layout.pre_check():
 				hard_exit(2)
 		ui.init()
-		ui.launch()
+		#ui.launch()
+    ui.launch(root_path=state_manager.get_item('root_path'))
 
 	if state_manager.get_item('command') == 'headless-run':
 		if not job_manager.init_jobs(state_manager.get_item('jobs_path')):
