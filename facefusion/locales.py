@@ -33,6 +33,7 @@ LOCALES : Locales =\
 		'replacing_audio_skipped': 'replacing audio skipped',
 		'restoring_audio_succeeded': 'restoring audio succeeded',
 		'restoring_audio_skipped': 'restoring audio skipped',
+    'root_path': 'specify the custom URL prefix for the application',
 		'clearing_temp': 'clearing temporary resources',
 		'processing_stopped': 'processing stopped',
 		'processing_image_succeeded': 'processing to image succeeded in {seconds} seconds',

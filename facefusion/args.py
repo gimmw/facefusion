@@ -14,6 +14,7 @@ def apply_args(args : Args, apply_state_item : ApplyStateItem) -> None:
 	apply_state_item('source_paths', args.get('source_paths'))
 	apply_state_item('target_path', args.get('target_path'))
 	apply_state_item('output_path', args.get('output_path'))
+  apply_state_item('root_path', args.get('root_path'))
 	apply_state_item('source_pattern', args.get('source_pattern'))
 	apply_state_item('target_pattern', args.get('target_pattern'))
 	apply_state_item('output_pattern', args.get('output_pattern'))
